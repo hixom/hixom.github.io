@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproducir canción</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: white;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    button {
+      background: #ffffff;
+      color: #203a43;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 26px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    audio {
+      display: none;
+    }
+    .note {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>▶️ Escucha esta canción</h1>
+    <button onclick="playSong()">Reproducir</button>
+    <p class="note">Toca el botón para empezar</p>
+    <audio id="player" src="cancion.mp3"></audio>
+  </div>
+
+  <script>
+    function playSong() {
+      const audio = document.getElementById('player');
+      audio.play();
+    }
+  </script>
+</body>
+</html>
