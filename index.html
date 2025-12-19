@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reproducir canción</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ Garcha - Spartan Mix</title>
+
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -15,82 +16,60 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       color: white;
     }
+
     .card {
       display: flex;
       flex-direction: column;
       align-items: center;
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
-      padding: 30px 40px;
+      padding: 26px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      text-align: center;
-      max-width: 320px;
+      max-width: 340px;
       width: 100%;
+      box-sizing: border-box;
     }
+
     .cover {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 16px;
+      border-radius: 18px;
       margin-bottom: 14px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     }
 
     h1 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
+      font-size: 1.1rem;
       font-weight: 500;
+      margin: 6px 0 14px 0;
+      text-align: center;
     }
-    button {
-      background: #ffffff;
-      color: #203a43;
-      border: none;
-      border-radius: 999px;
-      padding: 14px 26px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    }
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-    }
-    button:active {
-      transform: translateY(0);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+
     audio {
-      display: none;
-    }
-    .note {
-      margin-top: 18px;
-      font-size: 0.85rem;
-      opacity: 0.8;
+      width: 100%;
+      display: block;
     }
   </style>
 </head>
+
 <body>
   <div class="card">
-    <!-- Imagen de portada -->
-    <img src="perfil.jpeg" alt="Portada" class="cover" />
+
+    <!-- Imagen de perfil / portada -->
+    <img src="perfil.jpeg" alt="Portada" class="cover">
 
     <!-- Título -->
     <h1>DJ Garcha - Spartan Mix</h1>
 
     <!-- Reproductor completo -->
     <audio controls preload="metadata">
-      <source src="spartanmix.mp3" type="audio/mpeg" />
+      <source src="spartanmix.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
-  </div>
 
-  <script>
-    function playSong() {
-      const audio = document.getElementById('player');
-      audio.play();
-    }
-  </script>
+  </div>
 </body>
 </html>
+
