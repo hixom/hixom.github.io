@@ -16,6 +16,9 @@
       color: white;
     }
     .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
       padding: 30px 40px;
@@ -25,6 +28,15 @@
       max-width: 320px;
       width: 100%;
     }
+    .cover {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+
     h1 {
       font-size: 1.4rem;
       margin-bottom: 20px;
@@ -61,10 +73,17 @@
 </head>
 <body>
   <div class="card">
-    <h1>▶️ Escucha esta canción</h1>
-    <button onclick="playSong()">Reproducir</button>
-    <p class="note">Toca el botón para empezar</p>
-    <audio id="player" src="spartanmix.mp3"></audio>
+    <!-- Imagen de portada -->
+    <img src="portada.jpg" alt="Portada" class="cover" />
+
+    <!-- Título -->
+    <h1>DJ Garcha - Spartan Mix</h1>
+
+    <!-- Reproductor completo -->
+    <audio controls preload="metadata">
+      <source src="spartanmix.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio.
+    </audio>
   </div>
 
   <script>
